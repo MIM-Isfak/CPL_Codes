@@ -1,0 +1,122 @@
+##QA)
+def remove_duplicates(list):
+    seen = set()
+    result = []
+    for i in list:
+        if i not in seen:
+            seen.add(i)
+            result.append(i)
+    return result
+
+num = [1,2,2,5,7,3,2,1]
+
+print("Without duplicates:", remove_duplicates(num))
+
+
+
+##QB
+def insert_sorted(sorted_list, value):
+    for i in range(len(sorted_list)):
+        if value <= sorted_list[i]:
+            sorted_list.insert(i, value)
+            return
+    sorted_list.append(value)
+
+sorted_list = []
+
+print("Enter integers one by one. Press Enter to stop.\n")
+
+while True:
+    user_input = input("Enter an integer: ")
+    if user_input == "":
+        break
+    try:
+        number = int(user_input)
+        insert_sorted(sorted_list, number)
+        print(f"  List so far: {sorted_list}")
+    except ValueError:
+        print("  Invalid input. Please enter a valid integer.")
+
+print("\nFinal Sorted List:", sorted_list)
+
+#Example question----------------------------------
+name = input("Enter your name: ")
+age = int(input("Enter your age: ")
+
+year = 2026 + (50 - age)
+
+print("Hello! ",name," you'll be 50 in ",year)
+
+
+##QC)
+#create tuple
+student_info = ("John", 21, "A", ["Maths", "Science", "English"])
+
+#Display function
+def display_student_info(student_info):
+    print("Name    :", student_info[0])
+    print("Age     :", student_info[1])
+    print("Grade   :", student_info[2])
+    print("Subjects:", student_info[3])
+
+#Update function
+def update_subjects(student_info, new_subject):
+    subjects = student_info[3]
+    subjects.append(new_subject)
+    new_tuple = (student_info[0], student_info[1],
+                 student_info[2], subjects)
+    return new_tuple
+
+#Average age function
+def calculate_average_age(students):
+    total = 0
+    for student in students:
+        total += student[1]
+    return total / len(students)
+
+display_student_info(student_info)
+
+student_info = update_subjects(student_info, "Tamil")
+print("\nUpdated:", student_info)
+
+students = [
+    ("John",  21, "A", ["Maths"]),
+    ("Mary",  19, "B", ["English"]),
+    ("Kumar", 23, "A", ["Physics"])
+]
+print("Average Age:", calculate_average_age(students))# 1. Tuple உருவாக்கு
+student_info = ("John", 21, "A", ["Maths", "Science", "English"])
+
+#Display function
+def display_student_info(student_info):
+    print("Name    :", student_info[0])
+    print("Age     :", student_info[1])
+    print("Grade   :", student_info[2])
+    print("Subjects:", student_info[3])
+
+#Update function
+def update_subjects(student_info, new_subject):
+    subjects = student_info[3]
+    subjects.append(new_subject)
+    new_tuple = (student_info[0], student_info[1],
+                 student_info[2], subjects)
+    return new_tuple
+
+#Average age function
+def calculate_average_age(students):
+    total = 0
+    for student in students:
+        total += student[1]
+    return total / len(students)
+
+display_student_info(student_info)
+
+student_info = update_subjects(student_info, "Tamil")
+print("\nUpdated:", student_info)
+
+students = [
+    ("John",  21, "A", ["Maths"]),
+    ("Mary",  19, "B", ["English"]),
+    ("Kumar", 23, "A", ["Physics"])
+]
+print("Average Age:", calculate_average_age(students))
